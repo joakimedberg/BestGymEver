@@ -30,10 +30,8 @@ class CustomerDatabaseTest {
 			assertEquals(expected, actual);
 		
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -46,10 +44,8 @@ class CustomerDatabaseTest {
 			cd.getCustomers("customersTest2.txt");
 			fail();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -61,10 +57,8 @@ class CustomerDatabaseTest {
 			cd.getCustomers("customersTest3.txt");
 			fail();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 				
@@ -77,10 +71,8 @@ class CustomerDatabaseTest {
 			cd.getCustomers("customersTest5.txt");
 			fail();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -93,10 +85,8 @@ class CustomerDatabaseTest {
 
 			assertEquals("Alhambra Aromes Alabama", actual.get(0).getName());
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
