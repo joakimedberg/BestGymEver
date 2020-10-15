@@ -17,7 +17,7 @@ class CustomerDatabaseTest {
 	List<Customer> expected = new ArrayList<Customer>();
 	
 	@Test
-	void testIfFetchedDataIsValid() {
+	void testIfDataIsValid() {
 		// Given
 		CustomerDatabase cd = new CustomerDatabase("customersTest.txt");
 		expected.add(new Customer("Alhambra Aromes","7603021234", LocalDate.parse("2019-07-01")));
@@ -30,5 +30,8 @@ class CustomerDatabaseTest {
 		// Then
 		assertEquals(expected, actual);
 	}
+	
+	
+	
 
 }
