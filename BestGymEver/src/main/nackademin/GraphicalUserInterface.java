@@ -12,6 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * GUI to manage customers and their activity for BestGymEver.
+ * @author Joakim Edberg
+ *
+ */
 public class GraphicalUserInterface {
 	static Customer customer;
 	static CustomerDatabase cd = new CustomerDatabase();

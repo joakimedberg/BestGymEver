@@ -7,8 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Manages the customer database.
+ * @author Joakim Edberg
+ *
+ */
 public class CustomerDatabase {
 
+	/**
+	 * Fetches and returns customers from file.
+	 * @param path to customer database
+	 * @return customers
+	 * @throws FileNotFoundException if database file is not found
+	 * @throws Exception if faulty information in database
+	 */
 	public List<Customer> getCustomers(String path) throws FileNotFoundException, Exception {
 
 		List<Customer> customers = new ArrayList<>();

@@ -4,6 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Entity for customer.
+ * @author Joakim Edberg
+ *
+ */
 public class Customer {
 
 	private LocalDate membershipLastPayed;
@@ -36,6 +41,9 @@ public class Customer {
 		return "Customer [name=" + name + ", personID=" + personID + ", active=" + hasActiveMembership() + "]";
 	}
 
+	/**
+	 * Overrides equals
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

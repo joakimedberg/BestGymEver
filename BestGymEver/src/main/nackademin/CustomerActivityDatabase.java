@@ -6,11 +6,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * Manages customer activity database.
+ * @author Joakim Edberg
+ *
+ */
 public class CustomerActivityDatabase {
 
 	private File file;
 	private Customer customer;
 
+	/**
+	 * adds activity to the database.
+	 * @param customer 
+	 * @param date date for activity
+	 */
 	public void addActivity(Customer customer, LocalDate date) {
 		this.customer = customer;
 
