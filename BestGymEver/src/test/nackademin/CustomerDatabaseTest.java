@@ -15,8 +15,6 @@ import org.junit.jupiter.api.Test;
 
 class CustomerDatabaseTest {
 	List<Customer> expected = new ArrayList<Customer>();
-
-	
 	
 	@Test
 	void testIfFetchedDataIsValid() {
@@ -31,9 +29,6 @@ class CustomerDatabaseTest {
 		
 		// Then
 		assertEquals(expected, actual);
-		
-		
-
 	}
 
 }

@@ -26,8 +26,9 @@ public class GraphicalUserInterface {
 	private CustomerActivityDatabase cad;
 	
 	private void initGUI () {
-		String path = "customers";
+		String path = "customers.txt";
 		cd = new CustomerDatabase(path);
+		cd.printDatabase();
 				
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
