@@ -12,6 +12,7 @@ public class CustomerActivityDatabase {
 	private Customer customer;
 
 	public void addActivity(Customer customer, LocalDate date) {
+		this.customer = customer;
 
 		file = new File(customer.getpersonID());
 		if (!file.exists()) {
