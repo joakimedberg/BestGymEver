@@ -15,13 +15,13 @@ import javax.swing.JTextField;
 public class GraphicalUserInterface {
 	static Customer customer;
 	static CustomerDatabase cd = new CustomerDatabase();
-	static CustomerActivityDatabase cad;
-	
-	public static void main(String [] args) {	
-				
+	static CustomerActivityDatabase cad = new CustomerActivityDatabase();
+	static String path = "customers.txt";
+
+	public static void main(String[] args) {
+
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
-		
 
 		JTextField search = new JTextField(10);
 		JButton button = new JButton("SÖK");
@@ -36,63 +36,57 @@ public class GraphicalUserInterface {
 
 		frame.add(panel);
 		frame.setSize(300, 100);
-		
+
 		enter.setVisible(false);
 		frame.setVisible(true);
-		
+
 		try {
 			
-			String path = "customers.txt";
 			List<Customer> customers = cd.getCustomers(path);
-			
-			
+
 			// search function
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 
-					String searchValue = search.getText();
-							
+					String searchValue = search.getText().trim();
+
 					for (Customer c : customers) {
-						if (c.getName().equalsIgnoreCase(searchValue) || c.getpersonID().equalsIgnoreCase(searchValue)) {				
+						if (c.getName().equalsIgnoreCase(searchValue)
+								|| c.getpersonID().equalsIgnoreCase(searchValue)) {
 							if (c.hasActiveMembership()) {
 								result.setText("Aktiv"); // active membership
 								enter.setVisible(true);
 								customer = c;
-								
+
 							} else {
 								result.setText("Inaktiv"); // non active membership
 							}
 							break;
 						}
-						result.setText("Ej kund");		 // not customer
+						result.setText("Ej kund"); // not customer
 					}
 				}
-			});	
-			
-			// add activity 
+			});
+
+			// add activity
 			enter.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					cad = new CustomerActivityDatabase(customer);
-					cad.writeData(LocalDate.now());
+					cad.addActivity(customer, LocalDate.now());
 					enter.setVisible(false);
 					search.setText(null);
 					result.setText(null);
-					
+
 				}
 			});
-			
+
 		} catch (FileNotFoundException e) {
 			result.setText("Hittar inte databas.");
 			e.printStackTrace();
 		} catch (Exception e2) {
-			result.setText("Felaktig kunddata i databas");
+			result.setText("Felaktig kunddata i databas.");
 			e2.printStackTrace();
 		}
-				
-		
 
-		
 	}
-	
 
 }

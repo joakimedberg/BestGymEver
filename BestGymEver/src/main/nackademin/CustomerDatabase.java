@@ -16,18 +16,21 @@ public class CustomerDatabase {
 		String id;
 		String name;
 		String date;
-
+		
 		try (Scanner sc = new Scanner(new File(path))) {
 			while (sc.hasNextLine()) {
-				id = sc.findInLine("\\b\\d+\\b"); // 10 number ID
+				id = sc.findInLine("^\\d{10}$"); // 10 number ID 
+				System.out.println(id);
+								
 				name = sc.findInLine("[A-ZÅÄÖa-zåäö].*[A-ZÅÄÖa-zåäö]"); // first- and last name, incl åäö chars
 				sc.nextLine();
+				
 				date = sc.findInLine("[0-9]{4}-[0-9]{2}-[0-9]{2}"); // date yyyy-mm-dd
 				sc.nextLine();
-				if ((id.length() == 10) && (name != null) && (date != null)) {
+				if ((id != null) && (name != null) && (date != null)) {
 					customers.add(new Customer(name, id, LocalDate.parse(date)));
 				} else {
-					throw new Exception();
+					throw new Exception("Faulty data in database");
 				}
 			}
 		}
