@@ -40,7 +40,7 @@ public class CustomerActivityDatabase {
 	}
 
 	private void createDatabase() {
-
+	
 		try {
 			file.createNewFile();
 

@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * GUI to manage customers and their activity for BestGymEver.
+ * GUI to manage customers and their activity at BestGymEver.
  * @author Joakim Edberg
  *
  */
@@ -55,6 +55,10 @@ public class GraphicalUserInterface {
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 
+					/* TODO 
+					 * Either dismiss personIDs with other characters, eg. 123456-1234
+					 * or convert to only numbers.
+					 */
 					String searchValue = search.getText().trim();
 
 					for (Customer c : customers) {
