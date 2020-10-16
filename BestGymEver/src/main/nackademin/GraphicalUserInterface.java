@@ -69,7 +69,6 @@ public class GraphicalUserInterface {
 								result.setText("Aktiv"); // active membership
 								enter.setVisible(true);
 								customer = c;
-
 							} else {
 								result.setText("Inaktiv"); // non active membership
 							}

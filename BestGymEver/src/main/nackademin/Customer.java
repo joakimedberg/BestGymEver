@@ -27,6 +27,10 @@ public class Customer {
 	public boolean hasActiveMembership() {
 		return membership.isActive(membershipLastPayed);
 	}
+	
+	public Membership getMembership() {
+		return membership;
+	}
 
 	public String getName() {
 		return name;
