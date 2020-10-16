@@ -58,6 +58,7 @@ public class GraphicalUserInterface {
 					/* TODO 
 					 * Either dismiss personIDs with other characters, eg. 123456-1234
 					 * or convert to only numbers.
+					 * Reconstruct string if there's multiply space between names.
 					 */
 					String searchValue = search.getText().trim();
 
