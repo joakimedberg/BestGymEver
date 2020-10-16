@@ -1,8 +1,6 @@
 package nackademin;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Entity for customer.
@@ -36,6 +34,10 @@ public class Customer {
 		return membership.isActive();
 	}
 	
+	/**
+	 * Get details about customers membership.
+	 * @return membership
+	 */
 	public Membership getMembership() {
 		return membership;
 	}
