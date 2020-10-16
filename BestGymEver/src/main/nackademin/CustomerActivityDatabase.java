@@ -24,12 +24,12 @@ public class CustomerActivityDatabase {
 	public void addActivity(Customer customer, LocalDate date) {
 		this.customer = customer;
 
-		file = new File(customer.getpersonID());
+		file = new File(customer.getpersonID() + ".txt");
 		if (!file.exists()) {
 			createDatabase();
 		}
 
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(customer.getpersonID(), true))) {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(customer.getpersonID() + ".txt", true))) {
 
 			writer.newLine();
 			writer.append(date.toString());
@@ -44,7 +44,7 @@ public class CustomerActivityDatabase {
 		try {
 			file.createNewFile();
 
-			BufferedWriter writer = new BufferedWriter(new FileWriter(customer.getpersonID(), true));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(customer.getpersonID() + ".txt", true));
 			writer.write(customer.getpersonID() + ", " + customer.getName());
 			writer.close();
 		} catch (IOException e) {

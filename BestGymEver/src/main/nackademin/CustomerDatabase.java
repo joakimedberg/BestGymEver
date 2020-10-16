@@ -42,12 +42,11 @@ public class CustomerDatabase {
 				if ((id != null && id.length() == 10) && (name != null) && (date != null)) {
 					customers.add(new Customer(name, id, LocalDate.parse(date)));
 				} else {
-					throw new Exception("Faulty data in database");
+					throw new Exception("Faulty data in file.");
 				}
 			}
 		}
 		return customers;
-
 	}
 
 }

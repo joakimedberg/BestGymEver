@@ -21,10 +21,12 @@ public class GraphicalUserInterface {
 	static Customer customer;
 	static CustomerDatabase cd = new CustomerDatabase();
 	static CustomerActivityDatabase cad = new CustomerActivityDatabase();
-	static String path = "customers.txt";
+	
+	// path to file containing customers
+	final static String path = "customers.txt";
 
 	public static void main(String[] args) {
-
+		
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
 
@@ -85,10 +87,10 @@ public class GraphicalUserInterface {
 			});
 
 		} catch (FileNotFoundException e) {
-			result.setText("Hittar inte databas.");
+			result.setText("Hittar inte fil.");
 			e.printStackTrace();
 		} catch (Exception e2) {
-			result.setText("Felaktig kunddata i databas.");
+			result.setText("Felaktig kunddata i fil.");
 			e2.printStackTrace();
 		}
 
