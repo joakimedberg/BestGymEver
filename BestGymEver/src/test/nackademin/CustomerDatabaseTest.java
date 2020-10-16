@@ -69,7 +69,7 @@ class CustomerDatabaseTest {
 	}
 
 	@Test
-	public void throwExceptionIfIdIsDateIsInWrongForm() {
+	public void throwExceptionIfDateIsInWrongForm() {
 
 		try {
 			cd.getCustomers("customersTest5.txt");

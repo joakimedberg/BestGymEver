@@ -78,7 +78,9 @@ public class CustomerDatabase {
 	}
 	
 	private void createFile() {
-		
+		/* TODO
+		 * add custom path for file
+		 */
 		try {
 			file.createNewFile();
 

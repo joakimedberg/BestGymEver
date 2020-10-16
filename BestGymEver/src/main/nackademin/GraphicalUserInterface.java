@@ -21,6 +21,7 @@ public class GraphicalUserInterface {
 	static Customer customer;
 	static CustomerDatabase cd = new CustomerDatabase();
 	
+	
 	// path to file containing customers
 	final static String path = "customers.txt";
 
@@ -57,7 +58,10 @@ public class GraphicalUserInterface {
 					/* TODO 
 					 * Either dismiss personIDs with other characters, eg. 123456-1234
 					 * or convert to only numbers.
+					 * 
 					 * Reconstruct string if there's multiply space between names.
+					 * 
+					 * add function to clear search field.
 					 */
 					String searchValue = search.getText().trim();
 
