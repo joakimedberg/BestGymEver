@@ -64,7 +64,7 @@ public class CustomerDatabase {
 
 		file = new File(customer.getpersonID() + ".txt");
 		if (!file.exists()) {
-			createDatabase();
+			createFile();
 		}
 
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(customer.getpersonID() + ".txt", true))) {
@@ -77,7 +77,7 @@ public class CustomerDatabase {
 		}
 	}
 	
-	private void createDatabase() {
+	private void createFile() {
 		
 		try {
 			file.createNewFile();
