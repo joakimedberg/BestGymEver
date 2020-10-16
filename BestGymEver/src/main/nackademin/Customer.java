@@ -11,21 +11,29 @@ import java.util.List;
  */
 public class Customer {
 
-	private LocalDate membershipLastPayed;
 	private String name, personID;
 	private Membership membership;
 
+	/**
+	 * Constructs Customer and initializes a membership.
+	 * @param name 
+	 * @param personID 
+	 * @param membershipLastPayed
+	 */
 	public Customer(String name, String personID, LocalDate membershipLastPayed) {
 
-		membership = new Membership();
+		membership = new Membership(membershipLastPayed);
 
-		this.membershipLastPayed = membershipLastPayed;
 		this.name = name;
 		this.personID = personID;
 	}
-
+	
+	/**
+	 * If customer has an active membership or not.
+	 * @return true if its active, otherwise false
+	 */
 	public boolean hasActiveMembership() {
-		return membership.isActive(membershipLastPayed);
+		return membership.isActive();
 	}
 	
 	public Membership getMembership() {
@@ -60,8 +68,7 @@ public class Customer {
 		Customer guest = (Customer) obj;
 
 		return (guest.name.equals(name) 
-				&& guest.personID.equals(personID) 
-				&& guest.membershipLastPayed.equals(membershipLastPayed));
+				&& guest.personID.equals(personID));
 	}
 
 }

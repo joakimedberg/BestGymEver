@@ -9,12 +9,18 @@ import java.time.LocalDate;
  */
 public class Membership {
 	
+	private LocalDate membershipLastPayed;
+		
+	public Membership (LocalDate membershipLastPayed) {
+		this.membershipLastPayed = membershipLastPayed;
+	}
+	
 	/**
 	 * Return true if membership have been payed within a year, otherwise returns false.
 	 * @param membershipLastPayed
 	 * @return
 	 */
-	public boolean isActive(LocalDate membershipLastPayed) {
+	public boolean isActive() {
 		if (membershipLastPayed.plusYears(1).isAfter(LocalDate.now())) 
 			return true;			
 		else

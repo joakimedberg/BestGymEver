@@ -20,7 +20,6 @@ import javax.swing.JTextField;
 public class GraphicalUserInterface {
 	static Customer customer;
 	static CustomerDatabase cd = new CustomerDatabase();
-	static CustomerActivityDatabase cad = new CustomerActivityDatabase();
 	
 	// path to file containing customers
 	final static String path = "customers.txt";
@@ -82,7 +81,7 @@ public class GraphicalUserInterface {
 			// add activity
 			enter.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					cad.addActivity(customer, LocalDate.now());
+					cd.addActivity(customer, LocalDate.now());
 					enter.setVisible(false);
 					search.setText(null);
 					result.setText(null);
